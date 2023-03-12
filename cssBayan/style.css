@@ -123,10 +123,12 @@ body {
     .h1__header {
         font-size: 1em;
     }
+
     .mem-description {
         font-size: 0.75rem;
         text-align: center;
     }
+    
     .mem-input:checked~.img-wrapper {
         height: 3rem;
     }

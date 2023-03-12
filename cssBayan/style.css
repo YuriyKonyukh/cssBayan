@@ -1,60 +1,101 @@
 * {
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
-    font-size: 10px;
 }
+
 body {
-    max-width: 1280px;
+    min-height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+    padding: 2rem;
 }
-.main-container, .label {
-    cursor: pointer;
-    overflow: hidden;
+
+.h1__header {
+    margin: 0;
+    text-align: center;
+    padding-bottom: 0.5rem;
 }
-.input {
+
+.wrapper {
+    padding: 2rem;
+    max-width: 60%;
+    margin: 0 auto;
+    background: linear-gradient(#a4cff7, #dbf5e7);
+}
+
+.icon-wrapper {
+    transition: all .5s ease-in;
     display: none;
 }
-.wrapper {
-    margin: 0;
-    padding: 0 0.5em;
+
+.mem {
+    margin: 0 0 1rem;  
 }
-.h1__text {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 3.6em;
-    color: dimgray;
-    font-weight: 700;
-    margin: 0.5em;
-    text-align: center;
-}
-.mem-description {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 2.4em;
-    color: rgb(17, 16, 16);
-    font-weight: 400;
-    margin: 0.75em;
-    text-align: center;
-}
-.mem-container {
+
+.mem-label {
     display: flex;
-    justify-content: center;
-    transition: all .5s ease-in;
-    padding: 1em 0;
+    justify-content: space-between;
+    padding: 0 1rem 1.25rem;
+    font-size: 1.5em;
+    font-weight: 400;
+    transition: all .5s ease-out;
+    color: #581cc7;
+}
+
+.mem-label, .mem-input, .img-wrapper {
+    cursor: pointer;
+}
+
+.mem-input {
+    height: 0;
+    width: 0;
+}
+
+.img-wrapper img {
     width: 100%;
+}
+
+.img-wrapper {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    transition: all .3s;
+    overflow: hidden;
     height: 0;
 }
-.label {
+
+.mem-input:checked~.img-wrapper {
+    height: 27rem;
+    padding: 0,875rem 0;
+}
+
+.mem-input:checked + .mem-label > .icon-wrapper{
+    transform: rotate(45deg);
+}
+
+.mem-input:checked + .mem-label {
+    color: #000;
+}
+
+/*Hover*/
+
+.container:hover .icon-wrapper {
     display: block;
-    position: relative;
-    border-top: 0.1em solid gray;
 }
-.icon-wrapper {
-	position: absolute;
-	right: 0;
-	top: 1em;
-	transition: all .3s;
-	opacity: 0;
+
+.mem-label:hover, .container:hover .mem-label {
+    color: #000;
 }
-.mem-img{
-    transition: .5s ease-out;
+
+.mem-input:hover + .mem-label > .icon-wrapper {
+    transform: rotate(45deg);
+    fill: #581cc7;
+    transition: all .5s ease;
+}
+
+.mem:hover > .img-wrapper {
+    height: 27rem;
+    padding: 0,875rem 0;
 }
